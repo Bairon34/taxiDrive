@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "630723440503",
+    "firebase_url": "https://fireapp-8448e.firebaseio.com",
+    "project_id": "fireapp-8448e",
+    "storage_bucket": "fireapp-8448e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630723440503:android:ce5e64938a5d3628e03b72",
+        "android_client_info": {
+          "package_name": "com.example.fireapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630723440503-irhbe5f9s375tfrtuhmca44qu7c3sjmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_NUqIW6aCBzgfnHpPmT9JHF3csaTLLpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630723440503-blse7nvgb57bbgbhv70jpf7hc53kf2mn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "630723440503-fu5kqf7aulmv9fp2e4ua4ddmrra1s5l6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.calculater.Networking"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630723440503:android:132ca4bbff19da33e03b72",
+        "android_client_info": {
+          "package_name": "com.example.uberclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630723440503-irhbe5f9s375tfrtuhmca44qu7c3sjmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_NUqIW6aCBzgfnHpPmT9JHF3csaTLLpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630723440503-blse7nvgb57bbgbhv70jpf7hc53kf2mn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "630723440503-fu5kqf7aulmv9fp2e4ua4ddmrra1s5l6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.calculater.Networking"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
