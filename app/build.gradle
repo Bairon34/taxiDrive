@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 30
@@ -46,6 +47,9 @@ android {
 
     viewBinding {
         enabled = true
+    }
+    kotlinOptions {
+        jvmTarget = '11'
     }
 
 }
