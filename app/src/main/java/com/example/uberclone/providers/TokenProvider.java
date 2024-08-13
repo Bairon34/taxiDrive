@@ -1,5 +1,8 @@
 package com.example.uberclone.providers;
 
+import android.util.Log;
+
+import com.example.uberclone.BuildConfig;
 import com.example.uberclone.models.Token;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -14,7 +17,7 @@ public class TokenProvider {
 
     public TokenProvider() {
 
-        mDataBase = FirebaseDatabase.getInstance().getReference().child("Tokens");
+        mDataBase = FirebaseDatabase.getInstance().getReference().child(BuildConfig.PROPERTY).child("Tokens");
 
 
     }
@@ -33,7 +36,7 @@ public class TokenProvider {
 
                 Token token = new Token(instanceIdResult.getToken());
 
-                mDataBase.child(idUser).setValue(token);
+                mDataBase.child(idUser).setValue(token.getToken());
             }
         });
 

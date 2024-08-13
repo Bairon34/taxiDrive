@@ -1,6 +1,7 @@
 package com.example.uberclone.providers;
 
 
+import com.example.uberclone.BuildConfig;
 import com.example.uberclone.models.Client;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -14,7 +15,7 @@ public class ClientProvider {
     DatabaseReference mDatabase;
 
     public ClientProvider(){
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Clients");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child(BuildConfig.PROPERTY).child("Users").child("Clients");
     }
 
 

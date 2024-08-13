@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.uberclone.BuildConfig;
 import com.example.uberclone.R;
 import com.example.uberclone.adapters.HistoryBookingClientAdapter;
 import com.example.uberclone.includes.Mytoolbar;
@@ -40,7 +41,7 @@ public class HistoryBookingClient extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mAuthProvider = new AuthProvider();
-        Query query = FirebaseDatabase.getInstance().getReference().child("HistoryBooking").orderByChild("idClient").equalTo(mAuthProvider.getId());
+        Query query = FirebaseDatabase.getInstance().getReference().child(BuildConfig.PROPERTY).child("HistoryBooking").orderByChild("idClient").equalTo(mAuthProvider.getId());
         FirebaseRecyclerOptions<HistoryBooking> options = new FirebaseRecyclerOptions.Builder<HistoryBooking>()
                 .setQuery(query,HistoryBooking.class).build();
         mAdapter = new HistoryBookingClientAdapter(options,HistoryBookingClient.this);

@@ -1,5 +1,6 @@
 package com.example.uberclone.providers;
 
+import com.example.uberclone.BuildConfig;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQuery;
@@ -17,7 +18,7 @@ public class GeoFirebaseProvider {
 
     public GeoFirebaseProvider(String reference){
 
-        mDataBase = FirebaseDatabase.getInstance().getReference().child(reference);
+        mDataBase = FirebaseDatabase.getInstance().getReference().child(BuildConfig.PROPERTY).child(reference);
         mGeoFire = new GeoFire(mDataBase);
 
     }

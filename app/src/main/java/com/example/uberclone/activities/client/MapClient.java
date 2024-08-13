@@ -591,12 +591,7 @@ public class MapClient extends AppCompatActivity implements OnMapReadyCallback {
 
 
     public void generateToken(){
-
         mTokenProvider.create(mAuthProvider.getId());
-
-
-
-
     }
 }
 
