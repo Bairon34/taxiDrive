@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.uberclone.R;
 import com.example.uberclone.includes.Mytoolbar;
 import com.example.uberclone.models.Client;
+import com.example.uberclone.models.ClientModel;
 import com.example.uberclone.providers.AuthProvider;
 import com.example.uberclone.providers.ClientProvider;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -79,9 +80,9 @@ Registrer extends AppCompatActivity {
 
     private void clickRegister() {
 
-        final String name = mTextInputName.getText().toString();
-        final String email = mTextInputEmail.getText().toString();
-        String pass = mTextInputPass.getText().toString();
+        final String name = mTextInputName.getText().toString().trim();
+        final String email = mTextInputEmail.getText().toString().trim();
+        String pass = mTextInputPass.getText().toString().trim();
 
 
         if(!name.isEmpty() && !email.isEmpty() && !pass.isEmpty()){
@@ -119,12 +120,13 @@ Registrer extends AppCompatActivity {
 
                     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                    Client client = new Client(name,email,id);
+                    ClientModel client = new ClientModel(name,email,id,"");
                     create(client,id);
 
                 }else{
 
                     Toast.makeText(Registrer.this, "Fallo al registrar", Toast.LENGTH_SHORT).show();
+                    Log.e("error", "onComplete: "+task.getException().getMessage() );
 
                 }
             }
@@ -132,7 +134,7 @@ Registrer extends AppCompatActivity {
     }
 
 
-    void create (Client client,String id){
+    void create (ClientModel client,String id){
 
         mClientProvider.create(client,id).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

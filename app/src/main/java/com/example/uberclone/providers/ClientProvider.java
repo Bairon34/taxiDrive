@@ -3,6 +3,7 @@ package com.example.uberclone.providers;
 
 import com.example.uberclone.BuildConfig;
 import com.example.uberclone.models.Client;
+import com.example.uberclone.models.ClientModel;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +21,7 @@ public class ClientProvider {
 
 
 
-    public Task<Void> create(Client client,String id){
+    public Task<Void> create(ClientModel client, String id){
 
         Map<String,Object> map = new HashMap<>();
         map.put("name",client.getName());
