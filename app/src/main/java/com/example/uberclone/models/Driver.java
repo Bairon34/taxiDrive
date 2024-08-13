@@ -5,41 +5,10 @@ public class Driver {
 
     String name;
     String email;
-
     String vehicleBrand;
-
     String vehiclePlate;
     String image;
-
     String id;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Driver(){
-
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public Driver(String name, String email, String vehicleBrand, String vehiclePlate) {
-
-        this.name = name;
-        this.email = email;
-        this.vehicleBrand = vehicleBrand;
-        this.vehiclePlate = vehiclePlate;
-    }
 
     public Driver(String name, String email, String vehicleBrand, String vehiclePlate, String image, String id) {
         this.name = name;
@@ -49,6 +18,8 @@ public class Driver {
         this.image = image;
         this.id = id;
     }
+
+    public Driver(){}
 
     public String getName() {
         return name;
@@ -79,7 +50,23 @@ public class Driver {
     }
 
     public void setVehiclePlate(String vehiclePlate) {
-        vehiclePlate = vehiclePlate;
+        this.vehiclePlate = vehiclePlate;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 

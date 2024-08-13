@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -80,11 +81,11 @@ public class RegisterDriver extends AppCompatActivity {
 
     private void clickRegister() {
 
-        final String name = mTextInputName.getText().toString();
-        final String email = mTextInputEmail.getText().toString();
-        final String brand = mTextInputBrand.getText().toString();
-        final String plate = mTextInputPlate.getText().toString();
-        String pass = mTextInputPass.getText().toString();
+        final String name = mTextInputName.getText().toString().trim();
+        final String email = mTextInputEmail.getText().toString().trim();
+        final String brand = mTextInputBrand.getText().toString().trim();
+        final String plate = mTextInputPlate.getText().toString().trim();
+        String pass = mTextInputPass.getText().toString().trim();
 
 
         if(!name.isEmpty() && !email.isEmpty() && !pass.isEmpty() && !brand.isEmpty() && !plate.isEmpty()){
@@ -122,12 +123,14 @@ public class RegisterDriver extends AppCompatActivity {
 
                     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                    Driver driver = new Driver(name,email,brand,plate);
-                    create(driver,id);
+                    Driver driverModel = new Driver(name,email,brand,plate,"",id);
+
+                    create(driverModel,id);
 
                 }else{
 
                     Toast.makeText(RegisterDriver.this, "Fallo al registrar", Toast.LENGTH_SHORT).show();
+                    Log.e("error", "onComplete: "+ task.getException().getMessage() );
 
                 }
             }

@@ -5,7 +5,7 @@
 
 
     <item android:id="@+id/action_history"
-        android:title="Editar Perfil"
+        android:title="Historial de viajes"
         app:showAsAction="never"
         ></item>
 

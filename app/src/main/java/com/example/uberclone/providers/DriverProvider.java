@@ -1,6 +1,9 @@
 package com.example.uberclone.providers;
 
 
+import android.util.Log;
+
+import com.example.uberclone.BuildConfig;
 import com.example.uberclone.models.Client;
 import com.example.uberclone.models.Driver;
 import com.google.android.gms.tasks.Task;
@@ -17,7 +20,7 @@ public class DriverProvider {
 
     public DriverProvider(){
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child(BuildConfig.PROPERTY).child("Users").child("Drivers");
 
 
     }
@@ -26,7 +29,15 @@ public class DriverProvider {
 
     public Task<Void> create(Driver driver,String id){
 
-        return mDatabase.child(id).setValue(driver);
+        Map<String,Object> map = new HashMap<>();
+        map.put("name",driver.getName());
+        map.put("email",driver.getEmail());
+        map.put("vehicleBrand",driver.getVehicleBrand());
+        map.put("vehiclePlate",driver.getVehiclePlate());
+        map.put("image",driver.getImage());
+        map.put("id",driver.getId());
+
+        return mDatabase.child(id).setValue(map);
 
     }
 

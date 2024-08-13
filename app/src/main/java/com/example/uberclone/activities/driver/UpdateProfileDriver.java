@@ -165,7 +165,7 @@ public class UpdateProfileDriver extends AppCompatActivity {
                     if(dataSnapshot.hasChild("image")){
 
                         image = dataSnapshot.child("image").getValue().toString();
-                        Picasso.with(UpdateProfileDriver.this).load(image).into(mImageViewProfile);
+                        if(!image.isEmpty()){Picasso.with(UpdateProfileDriver.this).load(image).into(mImageViewProfile);}
                     }
 
                     mTextViewName.setText(name);
