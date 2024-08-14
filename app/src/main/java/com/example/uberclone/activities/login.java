@@ -76,8 +76,8 @@ public class login extends AppCompatActivity {
     private void login() {
 
 
-        String mail = email.getText().toString();
-        String pass = Pass.getText().toString();
+        String mail = email.getText().toString().trim();
+        String pass = Pass.getText().toString().trim();
 
         if( !mail.isEmpty() && !pass.isEmpty()){
 
