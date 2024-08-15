@@ -174,29 +174,22 @@ public class MapDriver extends AppCompatActivity implements OnMapReadyCallback {
                     startLocation();
                 }
 
-
             }
         });
 
         startLocation();
         generateToken();
-
         isDriverWorking();
-
-
-
-
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if (mListener != null) {
-
-            mGeofireProvider.isDriverWorking(mAuthProvider.getId()).removeEventListener(mListener);
-        }
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//
+//        if (mListener != null) {
+//            mGeofireProvider.isDriverWorking(mAuthProvider.getId()).removeEventListener(mListener);
+//        }
+//    }
 
     private void isDriverWorking() {
 
@@ -482,9 +475,7 @@ public class MapDriver extends AppCompatActivity implements OnMapReadyCallback {
     public void logout(){
 
         disconnect();
-
         mAuthProvider.logout();
-
         Intent intent = new Intent(MapDriver.this, MainActivity.class);
         startActivity(intent);
         finish();
