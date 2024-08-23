@@ -10,6 +10,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TokenProvider {
 
 
@@ -34,9 +37,9 @@ public class TokenProvider {
             @Override
             public void onSuccess(InstanceIdResult instanceIdResult) {
 
-                Token token = new Token(instanceIdResult.getToken());
-
-                mDataBase.child(idUser).setValue(token.getToken());
+                Map<String,Object> map = new HashMap<>();
+                map.put("token",instanceIdResult.getToken());
+                mDataBase.child(idUser).setValue(map);
             }
         });
 

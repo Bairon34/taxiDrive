@@ -379,6 +379,7 @@ public class RequestDriver extends AppCompatActivity {
                                 }
 
                             }else{
+                                Log.e("error", "onResponse: +++++ "+ response.errorBody());
                                 Toast.makeText(RequestDriver.this, "No se pudo enviar la notificacion", Toast.LENGTH_SHORT).show();
                             }
                         }
