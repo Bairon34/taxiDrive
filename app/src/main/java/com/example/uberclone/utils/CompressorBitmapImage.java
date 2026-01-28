@@ -30,6 +30,10 @@ public class CompressorBitmapImage {
             e.printStackTrace();
         }
 
+        if (thumb_bitmap == null) {
+            return null;
+        }
+
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         thumb_bitmap.compress(Bitmap.CompressFormat.JPEG,80,baos);
         byte[] thumb_byte = baos.toByteArray();

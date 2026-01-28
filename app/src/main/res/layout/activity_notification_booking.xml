@@ -18,13 +18,12 @@
             android:orientation="vertical">
 
 
-            <com.github.florent37.shapeofview.shapes.DiagonalView
+            <io.github.florent37.shapeofview.shapes.DiagonalView
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:elevation="4dp"
                 app:shape_diagonal_angle="10"
-                app:shape_diagonal_direction="left"
-                app:shape_diagonal_position="bottom">
+                >
 
 
                 <View
@@ -43,7 +42,7 @@
 
                 <!-- YOUR CONTENT -->
 
-            </com.github.florent37.shapeofview.shapes.DiagonalView>
+            </io.github.florent37.shapeofview.shapes.DiagonalView>
 
 
 
